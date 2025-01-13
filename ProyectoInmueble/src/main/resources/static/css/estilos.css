@@ -1,0 +1,27 @@
+
+    .bg-light-custom {
+      background-color: #a4d4db;
+    }
+
+    .bg-primary-custom {
+      background-color: #1c9ca3;
+    }
+
+    .bg-secondary-custom {
+      background-color: #c3e3e3;
+    }
+
+    .text-custom {
+      color: #a8c0c0;
+    }
+
+    .btn-custom {
+      background-color: #a8c0c0;
+      color: white;
+    }
+
+    .footer-custom {
+      background-color: #1c9ca3;
+    }
+
+

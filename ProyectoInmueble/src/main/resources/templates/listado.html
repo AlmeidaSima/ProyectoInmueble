@@ -1,0 +1,36 @@
+
+<head>
+    <title>Lista de inmuebles</title>
+</head>
+<body>
+    <h1>Lista de Inmuebles</h1>
+
+    <button>
+    <a th:href="@{/inmueble/Agregar}" style="text-decoration: none;">Agregar Usuario</a>
+</button>
+
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Titulo	</th>
+                <th>precio</th>
+                <th>Descricpion</th>
+                <th>estado</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="inmueble : ${inmuebles}">
+                <td th:text="${inmueble.InmuTitulo}"></td>
+                <td th:text="${inmueble.InmuPrecio}"></td>
+                <td th:text="${inmueble.InmuDescrip}"></td>
+                <td th:text="${inmueble.InmuEstado}"></td>
+                <td>
+                    <a th:href="@{/inmueble/edit/{id}(id=${inmueble.idInmueble})}">Editar</a> |
+                    <a th:href="@{/inmueble/delete/{id}(id=${inmueble.idInmueble})}">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
