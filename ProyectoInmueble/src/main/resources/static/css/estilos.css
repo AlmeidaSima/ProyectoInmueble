@@ -24,6 +24,7 @@
       background-color: #1c9ca3;
     }
 
+<<<<<<< HEAD
 @keyframes cambiarColor {
   0% { color: red; }
   25% { color: blue; }
@@ -35,4 +36,6 @@
 .animated-text {
   animation: cambiarColor 2s infinite;
 }
+=======
+>>>>>>> 6143d419c3300bd5b5b292ad0f51fcdfcdb1deec
 

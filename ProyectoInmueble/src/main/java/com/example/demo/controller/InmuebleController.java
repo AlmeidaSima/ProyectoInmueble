@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 import com.example.demo.entity.Inmueble;
 import com.example.demo.service.*;
+<<<<<<< HEAD
 
 import java.util.List;
 
@@ -22,6 +23,17 @@ import com.example.demo.service.InmuebleService;
 import org.springframework.ui.Model;
 
 
+=======
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.example.demo.service.InmuebleService;
+
+>>>>>>> 6143d419c3300bd5b5b292ad0f51fcdfcdb1deec
 @Controller
 @RequestMapping("/inmueble")
 public class InmuebleController {
@@ -44,6 +56,7 @@ public class InmuebleController {
 		return mav;
 
 	}
+<<<<<<< HEAD
 	
 	@GetMapping("/Agregar")
     public ModelAndView addInmuebleForm() {
@@ -77,6 +90,8 @@ public class InmuebleController {
         return "redirect:/inmueble/listado"; // Redirige a la lista después de eliminar
     }
 
+=======
+>>>>>>> 6143d419c3300bd5b5b292ad0f51fcdfcdb1deec
 	@GetMapping("/principal")
     public String mostrarPrincipal() {
         return "Principal"; 
@@ -85,6 +100,7 @@ public class InmuebleController {
     public String mostrarLogin() {
         return "login"; 
     }
+<<<<<<< HEAD
 	@GetMapping("/contacto")
     public String mostrarContacto() {
         return "contacto"; 
@@ -112,4 +128,7 @@ public class InmuebleController {
 	
 	
 
+=======
+	
+>>>>>>> 6143d419c3300bd5b5b292ad0f51fcdfcdb1deec
 }

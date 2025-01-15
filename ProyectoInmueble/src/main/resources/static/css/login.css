@@ -1,6 +1,11 @@
 body {
+<<<<<<< HEAD
   background-color: #f4f4f4; 
   font-family: Arial, sans-serif; 
+=======
+  background-color: #f4f4f4; /* Color de respaldo en caso de que la imagen no cargue */
+  font-family: Arial, sans-serif; /* Fuente base */
+>>>>>>> 6143d419c3300bd5b5b292ad0f51fcdfcdb1deec
 }
 
 
@@ -23,8 +28,13 @@ h1, p {
 
 .card {
   border-radius: 15px;
+<<<<<<< HEAD
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   background-color: rgba(255, 255, 255, 0.95); 
+=======
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más definida */
+  background-color: rgba(255, 255, 255, 0.95); /* Fondo blanco semitransparente */
+>>>>>>> 6143d419c3300bd5b5b292ad0f51fcdfcdb1deec
 }
 
 .card-body {

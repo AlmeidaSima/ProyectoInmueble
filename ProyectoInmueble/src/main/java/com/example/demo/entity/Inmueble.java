@@ -1,7 +1,10 @@
 package com.example.demo.entity;
 
+<<<<<<< HEAD
 import java.math.BigDecimal;
 
+=======
+>>>>>>> 6143d419c3300bd5b5b292ad0f51fcdfcdb1deec
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,12 +13,17 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
+<<<<<<< HEAD
 @Table(name = "inmueble")
+=======
+@Table(name= "inmueble")
+>>>>>>> 6143d419c3300bd5b5b292ad0f51fcdfcdb1deec
 public class Inmueble {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idInmueble")
 	private int idInmueble;
+<<<<<<< HEAD
 
 	@Column(name = "InmTitulo", nullable = false)
 	private String inmuTitulo;
@@ -72,6 +80,23 @@ public class Inmueble {
 		this.vecesAlquilado = vecesAlquilado;
 	}
 	
+=======
+	
+	@Column(name = "InmuTitulo")
+	private String InmuTitulo;
+	
+	@Column(name = "InmuPrecio")
+	private String InmuPrecio;
+	
+	@Column(name = "InmuDescrip")
+	private String InmuDescrip;
+	
+	@Column(name = "InmuEstado")
+	private String InmuEstado;
+	
+	
+
+>>>>>>> 6143d419c3300bd5b5b292ad0f51fcdfcdb1deec
 	public Inmueble() {
 		
 	}
@@ -85,6 +110,7 @@ public class Inmueble {
 	}
 
 	public String getInmuTitulo() {
+<<<<<<< HEAD
 		return inmuTitulo;
 	}
 
@@ -180,4 +206,41 @@ public class Inmueble {
 		this.vecesAlquilado = vecesAlquilado;
 	}
 
+=======
+		return InmuTitulo;
+	}
+
+	public void setInmuTitulo(String inmuTitulo) {
+		InmuTitulo = inmuTitulo;
+	}
+
+	public String getInmuPrecio() {
+		return InmuPrecio;
+	}
+
+	public void setInmuPrecio(String inmuPrecio) {
+		InmuPrecio = inmuPrecio;
+	}
+
+	public String getInmuDescrip() {
+		return InmuDescrip;
+	}
+
+	public void setInmuDescrip(String inmuDescrip) {
+		InmuDescrip = inmuDescrip;
+	}
+
+	public String getInmuEstado() {
+		return InmuEstado;
+	}
+
+	public void setInmuEstado(String inmuEstado) {
+		InmuEstado = inmuEstado;
+	}
+	
+	
+	
+	
+	
+>>>>>>> 6143d419c3300bd5b5b292ad0f51fcdfcdb1deec
 }
