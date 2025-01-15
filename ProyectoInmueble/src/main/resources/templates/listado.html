@@ -1,0 +1,72 @@
+<head>
+<meta charset="UTF-8">
+<title>Lista de Inmuebles</title>
+<!-- Incluye el CDN de Bootstrap -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+</head>
+<body>
+
+	<div th:replace="~{navbar}"></div>
+
+	<div class="container mt-4">
+	<form action="/inmueble/resultados" method="get">
+		<input type="text" name="searchTerm" placeholder="Buscar Inmuebles"
+			required>
+		<button type="submit">Buscar</button>
+	</form>
+	
+		<h1 class="text-center mb-4">Lista de Inmuebles</h1>
+
+		<div class="mb-3 text-end">
+			<a href="#" th:href="@{/inmueble/Agregar}" class="btn btn-primary">Agregar
+				Inmueble</a>
+		</div>
+		
+		<table class="table table-striped table-bordered">
+			<thead class="table-dark">
+				<tr>
+					<th>Título</th>
+					<th>Tipo</th>
+					<th>Precio</th>
+					<th>Descripción</th>
+					<th>Estado</th>
+					<th>Departamento</th>
+					<th>Ciudad</th>
+					<th>Área</th>
+					<th>Dirección</th>
+					<th>Pisos</th>
+					<th>Puntaje</th>
+					<th>Veces Alquilado</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="inmueble : ${inmuebles}">
+					<td th:text="${inmueble.inmuTitulo}"></td>
+					<td th:text="${inmueble.inmuTipo}"></td>
+					<td th:text="${inmueble.inmuPrecio}"></td>
+					<td th:text="${inmueble.inmuDescrip}"></td>
+					<td th:text="${inmueble.inmuEstado}"></td>
+					<td th:text="${inmueble.inmuDepart}"></td>
+					<td th:text="${inmueble.inmuCiudad}"></td>
+					<td th:text="${inmueble.inmuArea}"></td>
+					<td th:text="${inmueble.inmuDireccion}"></td>
+					<td th:text="${inmueble.inmuPisos}"></td>
+					<td th:text="${inmueble.inmuPunt}"></td>
+					<td th:text="${inmueble.vecesAlquilado}"></td>
+					<td>
+					<a href="#" th:href="@{/inmueble/edit/{id}(id=${inmueble.idInmueble})}" class="btn btn-warning btn-sm">Editar</a> 
+						<a href="#"
+						th:href="@{/inmueble/delete/{id}(id=${inmueble.idInmueble})}"
+						class="btn btn-danger btn-sm">Eliminar</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<!-- Incluye el CDN de Bootstrap JS -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>

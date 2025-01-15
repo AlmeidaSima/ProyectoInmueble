@@ -1,0 +1,38 @@
+
+    .bg-light-custom {
+      background-color: #a4d4db;
+    }
+
+    .bg-primary-custom {
+      background-color: #1c9ca3;
+    }
+
+    .bg-secondary-custom {
+      background-color: #c3e3e3;
+    }
+
+    .text-custom {
+      color: #a8c0c0;
+    }
+
+    .btn-custom {
+      background-color: #a8c0c0;
+      color: white;
+    }
+
+    .footer-custom {
+      background-color: #1c9ca3;
+    }
+
+@keyframes cambiarColor {
+  0% { color: red; }
+  25% { color: blue; }
+  50% { color: green; }
+  75% { color: orange; }
+  100% { color: red; }
+}
+
+.animated-text {
+  animation: cambiarColor 2s infinite;
+}
+

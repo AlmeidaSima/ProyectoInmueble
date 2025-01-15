@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Inmueble</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Font Awesome -->
+    <style>
+        .collage {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Cuadrícula de 2 columnas */
+            grid-gap: 5px;
+        }
+        .collage img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            cursor: pointer;
+        }
+        .modal-img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Estilos para las estrellas */
+        .stars {
+            display: flex;
+            gap: 5px;
+        }
+        .stars i {
+            color: #ddd;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        .stars i.filled {
+            color: #ff9900;
+        }
+        .stars i.hover {
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="collage">
+            <img src="https://i.ytimg.com/vi/lxXuih8duFw/maxresdefault.jpg" alt="Imagen 1" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="https://i.ytimg.com/vi/lxXuih8duFw/maxresdefault.jpg">
+            <img src="https://i.blogs.es/7cfcd0/casas-en-minecraft/1366_2000.jpeg" alt="Imagen 2" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="https://i.blogs.es/7cfcd0/casas-en-minecraft/1366_2000.jpeg">
+            <img src="https://pockethost.app/wp-content/uploads/2023/03/Minecraft-House-Idea-Mountain-House.webp" alt="Imagen 3" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="https://via.placeholder.com/300x200">
+            <img src="https://i.ytimg.com/vi/qlYbpkzYlPE/maxresdefault.jpg" alt="Imagen 4" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="https://via.placeholder.com/300x200">
+        </div>
+
+        <div class="card shadow mt-4">
+            <div class="card-body">
+                <h1 class="card-title text-primary">Inmueble</h1>
+                <p class="card-text text-muted">
+                    <strong>Tipo:</strong> Casa<br>
+                    <strong>Estado:</strong> <span class="badge bg-success">Disponible</span><br>
+                    <strong>Departamento:</strong> Lima<br>
+                    <strong>Ciudad:</strong> Miraflores<br>
+                    <strong>Dirección:</strong> Av. Ejemplo 123<br>
+                    <strong>Área:</strong> 120 m²<br>
+                    <strong>Pisos:</strong> 2<br>
+                    <strong>Veces alquilado:</strong> 3<br>
+                    <strong>Puntuación:</strong> 4.5 / 5
+                     <div class="stars">
+                    <i class="fa fa-star" data-index="1"></i>
+                    <i class="fa fa-star" data-index="2"></i>
+                    <i class="fa fa-star" data-index="3"></i>
+                    <i class="fa fa-star" data-index="4"></i>
+                    <i class="fa fa-star" data-index="5"></i>
+                </div>
+                </p>
+                <p class="card-text">
+                    <strong>Precio:</strong> <span class="text-success">$1500.00</span>
+                </p>
+                <p class="card-text">
+                    <strong>Descripción:</strong> Este es un hermoso inmueble ubicado en una zona privilegiada.
+                </p>
+                <a href="#" class="btn btn-primary">Volver a la lista</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const stars = document.querySelectorAll('.stars i');
+
+        stars.forEach(star => {
+            star.addEventListener('mouseover', () => {
+                const index = star.getAttribute('data-index');
+                fillStars(index);
+            });
+
+            star.addEventListener('mouseleave', () => {
+                clearStars();
+            });
+
+            star.addEventListener('click', () => {
+                const index = star.getAttribute('data-index');
+                setStars(index);
+            });
+        });
+
+        // Función para rellenar las estrellas en el hover
+        function fillStars(index) {
+            stars.forEach(star => {
+                if (star.getAttribute('data-index') <= index) {
+                    star.classList.add('hover');
+                } else {
+                    star.classList.remove('hover');
+                }
+            });
+        }
+
+        function clearStars() {
+            stars.forEach(star => {
+                star.classList.remove('hover');
+            });
+        }
+
+        function setStars(index) {
+            stars.forEach(star => {
+                if (star.getAttribute('data-index') <= index) {
+                    star.classList.add('filled');
+                } else {
+                    star.classList.remove('filled');
+                }
+            });
+        }
+    </script>
+
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Imagen</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="" alt="Imagen ampliada" class="modal-img">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const modalImg = document.querySelector('.modal-img');
+        const collageImages = document.querySelectorAll('.collage img');
+        collageImages.forEach(img => {
+            img.addEventListener('click', () => {
+                modalImg.src = img.getAttribute('data-img-src');
+            });
+        });
+    </script>
+</body>
+</html>

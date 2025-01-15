@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Búsqueda</title>
+</head>
+<body>
+    <h1>Resultados de búsqueda</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Tipo</th>
+                <th>Precio</th>
+                <th>Estado</th>
+                <th>Ubicación</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="inmueble : ${inmuebles}">
+                <td th:text="${inmueble.inmuTitulo}"></td>
+                <td th:text="${inmueble.inmuTipo}"></td>
+                <td th:text="${inmueble.inmuPrecio}"></td>
+                <td th:text="${inmueble.inmuEstado}"></td>
+                <td th:text="${inmueble.inmuCiudad + ', ' + inmueble.inmuDepart}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/inmueble/listado">Volver al listado de inmuebles</a>
+</body>
+</html>

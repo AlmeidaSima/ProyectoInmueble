@@ -1,0 +1,74 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Inmueble</title>
+    <!-- Incluye el CDN de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Agregar Inmueble</h1>
+        <form action="#" th:action="@{/inmueble/Agregar}" th:object="${inmueble}" method="post">
+            <div class="mb-3">
+                <label for="InmTitulo" class="form-label">Título:</label>
+                <input type="text" id="InmTitulo" th:field="*{inmuTitulo}" class="form-control" required="true" />
+            </div>
+            <div class="mb-3">
+                <label for="InmTipo" class="form-label">Tipo:</label>
+                <select id="InmTipo" th:field="*{inmuTipo}" class="form-select" required="true">
+                    <option value="Casa">Casa</option>
+                    <option value="Departamento">Departamento</option>
+                    <option value="Local">Local</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="InmPrecio" class="form-label">Precio:</label>
+                <input type="number" id="InmPrecio" th:field="*{inmuPrecio}" class="form-control" required="true" />
+            </div>
+            <div class="mb-3">
+                <label for="InmPisos" class="form-label">Número de Pisos:</label>
+                <input type="number" id="InmPisos" th:field="*{inmuPisos}" class="form-control" required="true" />
+            </div>
+            <div class="mb-3">
+                <label for="InmEstado" class="form-label">Estado:</label>
+                <select id="InmEstado" th:field="*{inmuEstado}" class="form-select" required="true">
+                    <option value="Disponible">Disponible</option>
+                    <option value="No disponible">No disponible</option>
+                    <option value="Dado de baja">Dado de baja</option>
+                </select>
+            </div>
+            <div class="mb-3">
+    	<label for="InmDescrip" class="form-label">Descripción:</label>
+    	<textarea id="InmDescrip" th:field="*{inmuDescrip}" class="form-control" rows="3" required></textarea>
+			</div>
+
+            <div class="mb-3">
+                <label for="InmPunt" class="form-label">Puntuación:</label>
+                <input type="number" step="0.01" id="InmPunt" th:field="*{inmuPunt}" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label for="InmDepart" class="form-label">Departamento:</label>
+                <input type="text" id="InmDepart" th:field="*{inmuDepart}" class="form-control" required="true" />
+            </div>
+            <div class="mb-3">
+                <label for="InmCiudad" class="form-label">Ciudad:</label>
+                <input type="text" id="InmCiudad" th:field="*{inmuCiudad}" class="form-control" required="true" />
+            </div>
+            <div class="mb-3">
+                <label for="InmArea" class="form-label">Área:</label>
+                <input type="text" id="InmArea" th:field="*{inmuArea}" class="form-control" required="true" />
+            </div>
+            <div class="mb-3">
+                <label for="InmDireccion" class="form-label">Dirección:</label>
+                <input type="text" id="InmDireccion" th:field="*{inmuDireccion}" class="form-control" required="true" />
+            </div>
+            <div class="mb-3"> 
+                <label for="VecesAlquilado" class="form-label">Veces Alquilado:</label>
+                <input type="number" id="VecesAlquilado" th:field="*{vecesAlquilado}" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-success">Agregar Inmueble</button>
+        </form>
+    </div>
+
+    <!-- Incluye el CDN de Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>

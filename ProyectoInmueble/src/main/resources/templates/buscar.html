@@ -1,0 +1,15 @@
+<div th:if="${inmuebles != null && inmuebles.size() > 0}">
+    <h3>Resultados de la búsqueda:</h3>
+    <ul>
+        <li th:each="inmueble : ${inmuebles}">
+            <span th:text="${inmueble.ciudad}"></span> - 
+            <span th:text="${inmueble.region}"></span> - 
+            <span th:text="${inmueble.departamento}"></span> - 
+            <span th:text="${inmueble.area}"></span>
+        </li>
+    </ul>
+</div>
+
+<div th:if="${inmuebles == null || inmuebles.isEmpty()}">
+    <p>No se encontraron resultados.</p>
+</div>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Inmueble</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="/css/Editar.css">
+
+</head>
+<body>
+    <div class="form-container">
+        <h1>Editar Inmueble</h1>
+        <!-- Formulario de edición -->
+        <form action="#" th:action="@{/inmueble/update}" th:object="${inmueble}" method="post">
+            <input type="hidden" th:field="*{idInmueble}">
+            <div class="mb-3">
+                <label for="inmuTitulo" class="form-label">Título del inmueble</label>
+                <input type="text" id="inmuTitulo" th:field="*{inmuTitulo}" class="form-control" placeholder="Título del inmueble">
+            </div>
+            <div class="mb-3">
+                <label for="inmuTipo" class="form-label">Tipo</label>
+                <select id="inmuTipo" th:field="*{inmuTipo}" class="form-select">
+                    <option value="Casa" th:selected="*{inmuTipo == 'Casa'}">Casa</option>
+                    <option value="Departamento" th:selected="*{inmuTipo == 'Departamento'}">Departamento</option>
+                    <option value="Local" th:selected="*{inmuTipo == 'Local'}">Local</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="inmuPrecio" class="form-label">Precio</label>
+                <input type="text" id="inmuPrecio" th:field="*{inmuPrecio}" class="form-control" placeholder="Precio">
+            </div>
+            <div class="mb-3">
+                <label for="inmuDescrip" class="form-label">Descripción</label>
+                <textarea id="inmuDescrip" th:field="*{inmuDescrip}" class="form-control" rows="3" placeholder="Descripción"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="inmuEstado" class="form-label">Estado</label>
+                <select id="inmuEstado" th:field="*{inmuEstado}" class="form-select">
+                    <option value="Disponible" th:selected="*{inmuEstado == 'Disponible'}">Disponible</option>
+                    <option value="No disponible" th:selected="*{inmuEstado == 'No disponible'}">No disponible</option>
+                    <option value="Dado de baja" th:selected="*{inmuEstado == 'Dado de baja'}">Dado de baja</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="inmuDepart" class="form-label">Departamento</label>
+                <input type="text" id="inmuDepart" th:field="*{inmuDepart}" class="form-control" placeholder="Departamento">
+            </div>
+            <div class="mb-3">
+                <label for="inmuCiudad" class="form-label">Ciudad</label>
+                <input type="text" id="inmuCiudad" th:field="*{inmuCiudad}" class="form-control" placeholder="Ciudad">
+            </div>
+            <div class="mb-3">
+                <label for="inmuArea" class="form-label">Área</label>
+                <input type="text" id="inmuArea" th:field="*{inmuArea}" class="form-control" placeholder="Área">
+            </div>
+            <div class="mb-3">
+                <label for="inmuDireccion" class="form-label">Dirección</label>
+                <input type="text" id="inmuDireccion" th:field="*{inmuDireccion}" class="form-control" placeholder="Dirección">
+            </div>
+            <div class="mb-3">
+                <label for="inmuPisos" class="form-label">Pisos</label>
+                <input type="text" id="inmuPisos" th:field="*{inmuPisos}" class="form-control" placeholder="Número de pisos">
+            </div>
+            <div class="mb-3">
+                <input type="submit" value="Guardar cambios" class="btn btn-primary w-100">
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

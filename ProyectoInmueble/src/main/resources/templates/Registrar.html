@@ -1,0 +1,17 @@
+
+    <h1>Agregar Inmueble</h1>
+    <form action="#" th:action="@{/inmueble/Agregar}" th:object="${inmueble}" method="post">
+        <div>
+            <label for="InmuTitulo">Titulo:</label>
+            <input type="text" id="InmuTitulo" th:field="*{InmuTitulo}" required="true" />
+        </div>
+        <div>
+            <label for="InmuPrecio">Precio:</label>
+            <input type="text" id="InmuPrecio" th:field="*{InmuPrecio}" required="true" />
+        </div>
+        <div>
+            <label for="InmuDescrip">Descripcion:</label>
+            <input type="text" id="InmuDescrip" th:field="*{InmuDescrip}" required="true" />
+        </div>
+        <button type="submit">Agregar Inmueble</button>
+    </form>
