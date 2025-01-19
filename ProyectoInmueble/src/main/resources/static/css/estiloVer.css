@@ -1,0 +1,67 @@
+.collage {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Cuadrícula de 2 columnas */
+            grid-gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .collage img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .modal-img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Estilos para las estrellas */
+        .stars {
+            display: flex;
+            gap: 5px;
+        }
+
+        .stars i {
+            color: #ddd;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        .stars i.filled {
+            color: #ff9900;
+        }
+
+        .stars i.hover {
+            color: #ffcc00;
+        }
+
+        .property-details {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .property-details h1 {
+            font-size: 2rem;
+            color: #007bff;
+        }
+
+        .property-details p {
+            font-size: 1.1rem;
+            color: #6c757d;
+        }
+
+        .property-details a {
+            margin-top: 15px;
+        }
+        /* Estilo para las estrellas medias */
+.half-filled {
+    background: linear-gradient(90deg, gold 50%, #ddd 50%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+        

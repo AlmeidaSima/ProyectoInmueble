@@ -14,7 +14,6 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springwithbdGA</name>
 	<description>Demo project for Spring Boot</description>
-<<<<<<< HEAD
 	<url />
 	<licenses>
 		<license />
@@ -27,7 +26,6 @@
 		<developerConnection />
 		<tag />
 		<url />
-=======
 	<url/>
 	<licenses>
 		<license/>
@@ -40,7 +38,6 @@
 		<developerConnection/>
 		<tag/>
 		<url/>
->>>>>>> 6143d419c3300bd5b5b292ad0f51fcdfcdb1deec
 	</scm>
 	<properties>
 		<java.version>17</java.version>
@@ -71,13 +68,10 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
-<<<<<<< HEAD
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 		<dependency>
-=======
->>>>>>> 6143d419c3300bd5b5b292ad0f51fcdfcdb1deec
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
@@ -90,32 +84,38 @@
 	</dependencies>
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<annotationProcessorPaths>
-						<path>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</path>
-					</annotationProcessorPaths>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
-					</excludes>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>17</source>
+                <target>17</target> 
+                <compilerArgs>
+                    <arg>-parameters</arg>
+                </compilerArgs>
+                <annotationProcessorPaths>
+                    <path>
+                        <groupId>org.projectlombok</groupId>
+                        <artifactId>lombok</artifactId>
+                    </path>
+                </annotationProcessorPaths>
+            </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+                <excludes>
+                    <exclude>
+                        <groupId>org.projectlombok</groupId>
+                        <artifactId>lombok</artifactId>
+                    </exclude>
+                </excludes>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
 
 </project>

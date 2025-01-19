@@ -1,7 +1,6 @@
 package com.example.demo.controller;
 import com.example.demo.entity.Inmueble;
 import com.example.demo.service.*;
-<<<<<<< HEAD
 
 import java.util.List;
 
@@ -21,19 +20,9 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.demo.service.InmuebleService;
 
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 
 
-=======
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
-
-import com.example.demo.service.InmuebleService;
-
->>>>>>> 6143d419c3300bd5b5b292ad0f51fcdfcdb1deec
 @Controller
 @RequestMapping("/inmueble")
 public class InmuebleController {
@@ -56,7 +45,6 @@ public class InmuebleController {
 		return mav;
 
 	}
-<<<<<<< HEAD
 	
 	@GetMapping("/Agregar")
     public ModelAndView addInmuebleForm() {
@@ -65,11 +53,15 @@ public class InmuebleController {
         return mav;
     }
 
-    @PostMapping("/Agregar")
-    public String addInmueble(@ModelAttribute("inmueble") Inmueble inmueble) {
-        inmuebleservice.addInmueble(inmueble);
-        return "redirect:/inmueble/listado";
-    }
+	@PostMapping("/Agregar")
+	public String addInmueble(@ModelAttribute("inmueble") Inmueble inmueble, BindingResult result) {
+	    if (result.hasErrors()) {
+	        return "Agregar"; 
+	    }
+	    inmuebleservice.addInmueble(inmueble);
+	    return "redirect:/inmueble/listado";
+	}
+
 
     @GetMapping("/edit/{id}")
     public ModelAndView editInmueble(@PathVariable("id") int id) {
@@ -87,11 +79,9 @@ public class InmuebleController {
     @GetMapping("/delete/{id}")
     public String deleteInmueble(@PathVariable("id") int id) {
         inmuebleservice.deleteInmueble(id);
-        return "redirect:/inmueble/listado"; // Redirige a la lista después de eliminar
+        return "redirect:/inmueble/listado";
     }
 
-=======
->>>>>>> 6143d419c3300bd5b5b292ad0f51fcdfcdb1deec
 	@GetMapping("/principal")
     public String mostrarPrincipal() {
         return "Principal"; 
@@ -100,7 +90,6 @@ public class InmuebleController {
     public String mostrarLogin() {
         return "login"; 
     }
-<<<<<<< HEAD
 	@GetMapping("/contacto")
     public String mostrarContacto() {
         return "contacto"; 
@@ -109,26 +98,30 @@ public class InmuebleController {
     public String mostrarNosotros() {
         return "nosotros"; 
     }
-	@GetMapping("/ver")
-    public String mostrarVer() {
-        return "inmuebleVer"; 
-    }
+	
+	 @GetMapping("/ver/{id}")
+	    public String verInmueble(@PathVariable("id") int id, Model model) {
+	        try {
+	            Inmueble inmueble = inmuebleservice.getInmuebleById(id);
+	            model.addAttribute("inmueble", inmueble);
+	            return "inmuebleVer"; 
+	        } catch (RuntimeException e) {
+	            model.addAttribute("error", "Inmueble no encontrado");
+	            return "error";  
+	        }
+	    }
+
 	@GetMapping("/vistaInmuebles")
 	public ModelAndView vistaInmuebles() {
 	    ModelAndView mav = new ModelAndView("vistaInmuebles"); 
 	    mav.addObject("inmuebles", inmuebleservice.listAllInmuebles());
 	    return mav;
 	}
+	
 	@GetMapping("/buscar")
 	public String buscarInmuebles(@RequestParam String searchTerm, Model model) {
 	    List<Inmueble> resultados = inmuebleservice.buscarInmuebles(searchTerm);
 	    model.addAttribute("inmuebles", resultados);  
 	    return "resultados";  
 	}
-	
-	
-
-=======
-	
->>>>>>> 6143d419c3300bd5b5b292ad0f51fcdfcdb1deec
 }

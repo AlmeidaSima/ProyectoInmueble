@@ -1,14 +1,10 @@
 package com.example.demo.service.imp;
 
 import java.util.List;
+import java.util.Optional;
 
-<<<<<<< HEAD
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-=======
-import javax.management.RuntimeErrorException;
-
->>>>>>> 6143d419c3300bd5b5b292ad0f51fcdfcdb1deec
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -18,7 +14,6 @@ import com.example.demo.repository.InmuebleRepository;
 import com.example.demo.service.InmuebleService;
 
 @Service("inmuebleservice")
-<<<<<<< HEAD
 public class InmuebleServiceImpl implements InmuebleService {
 
     private static final Logger logger = LoggerFactory.getLogger(InmuebleServiceImpl.class);
@@ -31,7 +26,7 @@ public class InmuebleServiceImpl implements InmuebleService {
     public List<Inmueble> listAllInmuebles() {
         return inmueblerepository.findAll();
     }
-
+ 
     @Override
     public Inmueble addInmueble(Inmueble inmueble) {
         return inmueblerepository.save(inmueble);
@@ -42,6 +37,7 @@ public class InmuebleServiceImpl implements InmuebleService {
         return inmueblerepository.findById(id)
             .orElseThrow(() -> new RuntimeException("Inmueble no encontrado con ID " + id));
     }
+
 
     @Override
     public void updateInmueble(Inmueble inmueble) {
@@ -68,7 +64,6 @@ public class InmuebleServiceImpl implements InmuebleService {
 
     @Override
     public List<Inmueble> buscarInmuebles(String searchTerm) {
-        // Validar que el término de búsqueda tenga al menos 3 caracteres
         if (searchTerm == null || searchTerm.trim().isEmpty() || searchTerm.trim().length() < 3) {
             throw new IllegalArgumentException("El término de búsqueda debe tener al menos 3 caracteres");
         }
@@ -96,48 +91,14 @@ public class InmuebleServiceImpl implements InmuebleService {
             });
         }
     }
-=======
-public class InmuebleServiceImpl implements InmuebleService{
-	
-	@Autowired
-	@Qualifier("inmueblerepository")
-	private InmuebleRepository inmueblerepository;
-
-	@Override
-	public List<Inmueble> listAllInmuebles() {
-		return inmueblerepository.findAll();
-	}
-
-	@Override
-	public Inmueble addInmueble(Inmueble inmueble) {
-		return inmueblerepository.save(inmueble);
-	}
-
-	@Override
-	public Inmueble getInmuebleById(int id) {
-		
-		return  inmueblerepository.findById(id).orElseThrow(() ->
-		new RuntimeException("inmueble no encontrado con ID "+ id));				
-	}
-
-	@Override
-	public void updateInmueble(Inmueble inmueble) {
-		System.out.println("inmueble a actualizar: " + inmueble.getIdInmueble() + ", " + inmueble.getInmuTitulo() + ", " 
-	+ inmueble.getInmuPrecio() + " "+ inmueble.getInmuDescrip() + inmueble.getInmuEstado());
-	    if (inmueblerepository.existsById(inmueble.getIdInmueble())) {
-	        inmueblerepository.save(inmueble);  
-	    } else {
-	        throw new RuntimeException("inmuble no encontrado para actualizar");
-	    }
-		
-	}
-
-	@Override
-	public void deleteInmumeble(int id) {
-		inmueblerepository.deleteById(id);
-		
-	}
->>>>>>> 6143d419c3300bd5b5b292ad0f51fcdfcdb1deec
+    //public Inmueble obtenerInmueblePorId(Long id) {
+     //   Optional<Inmueble> inmueble = inmueblerepository.findById(id);
+    //    return inmueble.orElse(null);  // Devuelve null si no se encuentra
+  //  }
+    @Override
+    public void saveInmueble(Inmueble inmueble) {
+        inmueblerepository.save(inmueble); // Guardar inmueble
+    }
 
 	
 }

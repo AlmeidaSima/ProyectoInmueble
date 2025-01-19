@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registrar Pago</title>
+</head>
+<body>
+    <h1>Detalles del Pago</h1>
+    <form action="/pagos/registrar" method="post" th:object="${pago}">
+        <label for="idAlquiler">ID Alquiler:</label>
+        <input type="text" id="idAlquiler" name="idAlquiler" th:value="*{idAlquiler}" disabled><br>
+
+        <label for="pagCosto">Costo:</label>
+        <input type="text" id="pagCosto" name="pagCosto" th:value="*{pagCosto}" readonly><br>
+
+        <label for="pagDsct">Descuento:</label>
+        <input type="text" id="pagDsct" name="pagDsct" th:value="*{pagDsct}" readonly><br>
+
+        <label for="pagCosMan">Costo de Mantenimiento:</label>
+        <input type="text" id="pagCosMan" name="pagCosMan" th:value="*{pagCosMan}" readonly><br>
+
+        <label for="pagTotal">Total:</label>
+        <input type="text" id="pagTotal" name="pagTotal" th:value="*{pagTotal}" readonly><br>
+
+        <button type="submit">Realizar Pago</button>
+    </form>
+</body>
+</html>

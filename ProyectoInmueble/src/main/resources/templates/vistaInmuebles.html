@@ -54,7 +54,10 @@
 
                       
                         <div>
-   						 	<a th:href="@{/inmueble/ver}" class="btn btn-primary btn-sm">ver</a>
+							<button >
+<a th:href="@{/inmueble/ver/{id}(id=${inmueble.idInmueble})}" class="btn btn-primary">Ver Detalle</a>
+							</button>
+
 
 						</div>
 
