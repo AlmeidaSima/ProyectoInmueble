@@ -29,12 +29,12 @@ public class ContratoAlquilerController {
 		model.addAttribute("inmueble", inmueble); 
 		return "alquilar"; 
 	}
-
 	@PostMapping("/inmueble/alquilar")
 	public String alquilarInmueble(
 	    @RequestParam(name = "idInmueble") Integer idInmueble,
 	    @RequestParam(name = "fecIni") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) java.time.LocalDate fecIni,
 	    @RequestParam(name = "fecFin") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) java.time.LocalDate fecFin,
+	    @RequestParam(name = "costo") BigDecimal costo,
 	    Model model) {
 
 	    // Convertir LocalDate a java.sql.Date
@@ -52,11 +52,10 @@ public class ContratoAlquilerController {
 	    inmuebleService.saveInmueble(inmueble);
 
 	    // Guardar contrato de alquiler
-	    contratoAlquilerService.guardarContratoAlquiler(idInmueble, sqlFecIni, sqlFecFin, inmueble.getInmuPrecio());
+	    contratoAlquilerService.guardarContratoAlquiler(idInmueble, sqlFecIni, sqlFecFin, costo);
 
 	    return "redirect:/inmueble/vistaInmuebles/" + idInmueble;
 	}
-
 
 
 
