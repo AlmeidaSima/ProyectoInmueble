@@ -1,0 +1,61 @@
+<!-- agregar-usuario.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Usuario</title>
+    <!-- Incluyendo Bootstrap CSS desde un CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4 text-center">Agregar Usuario</h1>
+        <form action="/user" method="POST" class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label for="UsuName" class="form-label">Nombre de Usuario:</label>
+                <input type="text" id="UsuName" name="UsuName" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="UsuPass" class="form-label">Contraseña:</label>
+                <input type="password" id="UsuPass" name="UsuPass" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="UsuNomb" class="form-label">Nombre:</label>
+                <input type="text" id="UsuNomb" name="UsuNomb" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="UsuApe" class="form-label">Apellido:</label>
+                <input type="text" id="UsuApe" name="UsuApe" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="UsuCorreo" class="form-label">Correo Electrónico:</label>
+                <input type="email" id="UsuCorreo" name="UsuCorreo" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="UsuCelular" class="form-label">Celular:</label>
+                <input type="text" id="UsuCelular" name="UsuCelular" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label for="UsuTipo" class="form-label">Tipo de Usuario:</label>
+                <select id="UsuTipo" name="UsuTipo" class="form-select" required>
+                    <option value="Usuario">Usuario</option>
+                    <option value="Administrador">Administrador</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Guardar</button>
+        </form>
+    </div>
+
+    <!-- Incluyendo Bootstrap JS desde un CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

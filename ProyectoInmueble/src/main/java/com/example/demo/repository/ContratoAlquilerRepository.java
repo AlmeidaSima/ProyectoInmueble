@@ -7,8 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import com.example.demo.entity.ContratoAlquiler;
 @Repository
-
-
 public interface ContratoAlquilerRepository extends JpaRepository<ContratoAlquiler, Serializable> {
 	
 }

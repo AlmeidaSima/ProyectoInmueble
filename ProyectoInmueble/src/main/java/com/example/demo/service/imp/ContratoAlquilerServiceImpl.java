@@ -25,20 +25,38 @@ public class ContratoAlquilerServiceImpl implements ContratoAlquilerService {
 
 	    @Override
 	    public ContratoAlquiler guardarContratoAlquiler(Integer idInmueble, Date fechaInicio, Date fechaFin, java.math.BigDecimal costo) {
-	        // Obtener el inmueble
 	        Inmueble inmueble = inmuebleService.getInmuebleById(idInmueble);
 	        if (inmueble == null) {
 	            throw new IllegalArgumentException("El inmueble no existe.");
 	        }
-
-	        // Crear el contrato de alquiler
 	        ContratoAlquiler contratoAlquiler = new ContratoAlquiler();
 	        contratoAlquiler.setInmueble(inmueble);
 	        contratoAlquiler.setAlqFecIni(new java.sql.Date(fechaInicio.getTime()));
 	        contratoAlquiler.setAlqFechFin(new java.sql.Date(fechaFin.getTime()));
 	        contratoAlquiler.setAlqCosto(costo);
 
-	        // Guardar el contrato en la base de datos
 	        return contratoAlquilerRepository.save(contratoAlquiler);
 	    }
+
+		@Override
+		public Inmueble findInmuebleById(Integer idAlquiler) {
+			return null;
+		}
+
+		@Override
+		public Date findFechaInicioById(Integer idAlquiler) {
+			return null;
+		}
+
+		@Override
+		public Date findFechaFinById(Integer idAlquiler) {
+			return null;
+		}
+
+		@Override
+		public ContratoAlquiler obtenerContratoAlquilerPorId(Integer id) {
+		    return contratoAlquilerRepository.findById(id).orElse(null);
+		}
+
+		
 }

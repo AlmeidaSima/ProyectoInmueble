@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Editar Usuario</h1>
+    
+    <!-- Pasar el objeto usuario al script -->
+    <div th:with="usuario=${usuario}">
+        <form action="/user/update/${usuario.id}" method="POST" class="p-4 border rounded shadow">
+            <div class="mb-3">
+                <label for="UsuNomb" class="form-label">Nombre:</label>
+                <input type="text" id="UsuNomb" name="UsuNomb" class="form-control" th:value="${usuario.UsuNomb}" required>
+            </div>
+            <div class="mb-3">
+                <label for="UsuApe" class="form-label">Apellido:</label>
+                <input type="text" id="UsuApe" name="UsuApe" class="form-control" th:value="${usuario.UsuApe}" required>
+            </div>
+            <div class="mb-3">
+                <label for="UsuCorreo" class="form-label">Correo Electrónico:</label>
+                <input type="email" id="UsuCorreo" name="UsuCorreo" class="form-control" th:value="${usuario.UsuCorreo}" required>
+            </div>
+            <div class="mb-3">
+                <label for="UsuCelular" class="form-label">Celular:</label>
+                <input type="text" id="UsuCelular" name="UsuCelular" class="form-control" th:value="${usuario.UsuCelular}">
+            </div>
+            <div class="mb-3">
+                <label for="UsuTipo" class="form-label">Tipo de Usuario:</label>
+                <select id="UsuTipo" name="UsuTipo" class="form-select" required>
+                    <option th:selected="${usuario.UsuTipo == 'Usuario'}" value="Usuario">Usuario</option>
+                    <option th:selected="${usuario.UsuTipo == 'Administrador'}" value="Administrador">Administrador</option>
+                </select>
+            </div>
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-primary">Actualizar</button>
+                <a href="/inmueble/listadoUsu" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Aquí van los logs corregidos para evitar errores -->
+    <script>
+        console.log("Objeto usuario:", usuario);  // Corregido el uso de ${}
+        console.log("Nombre del usuario:", usuario.UsuNomb);
+        console.log("Apellido del usuario:", usuario.UsuApe);
+        console.log("Correo del usuario:", usuario.UsuCorreo);
+        console.log("Celular del usuario:", usuario.UsuCelular);
+        console.log("Tipo del usuario:", usuario.UsuTipo);
+    </script>
+    
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

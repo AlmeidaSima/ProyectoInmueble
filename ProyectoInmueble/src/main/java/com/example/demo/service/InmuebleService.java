@@ -16,6 +16,7 @@ public interface InmuebleService {
 	public abstract List<Inmueble> buscarInmuebles(String searchTerm);
     void pruebaBusquedaInmuebles(String ciudad);
     void saveInmueble(Inmueble inmueble);  
+    
 
     
 

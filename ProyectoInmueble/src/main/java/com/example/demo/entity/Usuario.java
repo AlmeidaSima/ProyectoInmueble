@@ -10,136 +10,139 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "usuario")  
 public class Usuario {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idUsuario;
 
-    @Column(name = "UsuName", unique = true, nullable = false)
-    private String usuario;
+    @Column(name = "usuName", unique = true, nullable = false)
+    private String UsuName;
 
-    @Column(name = "UsuPass", nullable = false)
-    private String contrasena;
+    @Column(name = "usuPass", nullable = false)
+    private String UsuPass;
 
-    @Column(name = "UsuNomb")
-    private String nombre;
+    @Column(name = "usuNomb", nullable = false)
+    private String UsuNomb;
 
-    @Column(name = "UsuApe")
-    private String apellido;
+    @Column(name = "usuApe", nullable = false)
+    private String UsuApe;
 
-    @Column(name = "UsuCorreo")
-    private String correo;
+    @Column(name = "usuCorreo", unique = true, nullable = false)
+    private String UsuCorreo;
 
-    @Column(name = "UsuCelular")
-    private String celular;
+    @Column(name = "usuCelular")
+    private String UsuCelular;
 
-    @Column(name = "UsuTipo")
-    private String tipo;
+    @Column(name = "usuTipo", nullable = false)
+    private String UsuTipo;
 
-    @Column(name = "UsuPunt")
-    private double punt;
+    @Column(name = "vecesAlquilo")
+    private int VecesAlquilo = 0;
 
-    @Column(name = "VecesAlquilo")
-    private int vecesAlquilo;
-
-    // Constructor, Getters y Setters
-
-    public Usuario() {
-        super();
-    }
-
-    public Usuario(int idUsuario, String usuario, String contrasena, String nombre, String apellido, String correo,
-            String celular, String tipo, double punt, int vecesAlquilo) {
-        super();
-        this.idUsuario = idUsuario;
-        this.usuario = usuario;
-        this.contrasena = contrasena;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.correo = correo;
-        this.celular = celular;
-        this.tipo = tipo;
-        this.punt = punt;
-        this.vecesAlquilo = vecesAlquilo;
-    }
+	public Usuario(int idUsuario, String usuName, String usuPass, String usuNomb, String usuApe, String usuCorreo,
+			String usuCelular, String usuTipo, int vecesAlquilo) {
+		super();
+		this.idUsuario = idUsuario;
+		UsuName = usuName;
+		UsuPass = usuPass;
+		UsuNomb = usuNomb;
+		UsuApe = usuApe;
+		UsuCorreo = usuCorreo;
+		UsuCelular = usuCelular;
+		UsuTipo = usuTipo;
+		VecesAlquilo = vecesAlquilo;
+	}
+	public Usuario() {
+	}
 
 	public int getIdUsuario() {
 		return idUsuario;
 	}
 
+
 	public void setIdUsuario(int idUsuario) {
 		this.idUsuario = idUsuario;
 	}
 
-	public String getUsuario() {
-		return usuario;
+
+	public String getUsuName() {
+		return UsuName;
 	}
 
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
+
+	public void setUsuName(String usuName) {
+		UsuName = usuName;
 	}
 
-	public String getContrasena() {
-		return contrasena;
+
+	public String getUsuPass() {
+		return UsuPass;
 	}
 
-	public void setContrasena(String contrasena) {
-		this.contrasena = contrasena;
+
+	public void setUsuPass(String usuPass) {
+		UsuPass = usuPass;
 	}
 
-	public String getNombre() {
-		return nombre;
+
+	public String getUsuNomb() {
+		return UsuNomb;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+
+	public void setUsuNomb(String usuNomb) {
+		UsuNomb = usuNomb;
 	}
 
-	public String getApellido() {
-		return apellido;
+
+	public String getUsuApe() {
+		return UsuApe;
 	}
 
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
+
+	public void setUsuApe(String usuApe) {
+		UsuApe = usuApe;
 	}
 
-	public String getCorreo() {
-		return correo;
+
+	public String getUsuCorreo() {
+		return UsuCorreo;
 	}
 
-	public void setCorreo(String correo) {
-		this.correo = correo;
+
+	public void setUsuCorreo(String usuCorreo) {
+		UsuCorreo = usuCorreo;
 	}
 
-	public String getCelular() {
-		return celular;
+
+	public String getUsuCelular() {
+		return UsuCelular;
 	}
 
-	public void setCelular(String celular) {
-		this.celular = celular;
+
+	public void setUsuCelular(String usuCelular) {
+		UsuCelular = usuCelular;
 	}
 
-	public String getTipo() {
-		return tipo;
+
+	public String getUsuTipo() {
+		return UsuTipo;
 	}
 
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+
+	public void setUsuTipo(String usuTipo) {
+		UsuTipo = usuTipo;
 	}
 
-	public double getPunt() {
-		return punt;
-	}
-
-	public void setPunt(double punt) {
-		this.punt = punt;
-	}
 
 	public int getVecesAlquilo() {
-		return vecesAlquilo;
+		return VecesAlquilo;
 	}
 
+
 	public void setVecesAlquilo(int vecesAlquilo) {
-		this.vecesAlquilo = vecesAlquilo;
+		VecesAlquilo = vecesAlquilo;
 	}
+    
     
 }
