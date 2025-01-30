@@ -9,6 +9,7 @@
 	rel="stylesheet">
 </head>
 <body>
+<a href="/inmueble/principal">Volver</a>
 	<div class="container d-flex justify-content-center align-items-center"
 		style="height: 60vh;">
 		<div class="card" style="width: 20rem;">
@@ -28,12 +29,17 @@
 					<button type="submit" class="btn btn-primary w-100">Iniciar
 						Sesión</button>
 				</form>
+		     
+				
 				
 				<div th:if="${param.error}">
 					<p class="text-danger" th:text="${param.error}"></p>
 				</div>
+				
 			</div>
+			<a href="/user/agregar" >¿Todavia no tienes cuenta? Registrate</a>
 		</div>
+		
 	</div>
 </body>
 </html>

@@ -33,10 +33,8 @@ public class UsuarioServiceImpl implements UsuarioService{
 	        if (usuario == null || usuario.getIdUsuario() == 0) {
 	            throw new IllegalArgumentException("Usuario no válido para actualización");
 	        }
-	        return usuarioRepository.save(usuario);  // Llama al repositorio para guardar el usuario actualizado
+	        return usuarioRepository.save(usuario); 
 	    }
-
-	   
 
 	    @Override
 	    public void deleteUsuario(int id) {

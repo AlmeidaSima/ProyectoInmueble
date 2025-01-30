@@ -9,6 +9,8 @@ public interface UsuarioService {
 	public abstract List<Usuario> getAllUsuarios();
 	public abstract Usuario getUsuarioById(int id);
 	public abstract Usuario saveUsuario(Usuario usuario);
-    public abstract Usuario updateUsuario(Usuario usuario);  // Se añade el método
-    void deleteUsuario(int id);   
+	public abstract Usuario updateUsuario(Usuario usuario);
+	public abstract void deleteUsuario(int id);
+
+  
 }

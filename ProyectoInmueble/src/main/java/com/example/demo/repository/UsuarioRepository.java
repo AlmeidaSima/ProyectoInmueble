@@ -10,7 +10,6 @@ import com.example.demo.entity.Usuario;
 
 @Repository("usuariorepository")
 public interface UsuarioRepository extends JpaRepository<Usuario, Serializable> {
-//	Optional <Usuario> findByUser(String usuName);
 }
 
  

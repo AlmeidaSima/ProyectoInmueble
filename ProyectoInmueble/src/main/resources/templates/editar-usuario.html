@@ -12,7 +12,7 @@
     
     <!-- Pasar el objeto usuario al script -->
     <div th:with="usuario=${usuario}">
-        <form action="/user/update/${usuario.id}" method="POST" class="p-4 border rounded shadow">
+<form action="#" th:action="@{/user/update/{id}}" th:object="${user}" method="post">
             <div class="mb-3">
                 <label for="UsuNomb" class="form-label">Nombre:</label>
                 <input type="text" id="UsuNomb" name="UsuNomb" class="form-control" th:value="${usuario.UsuNomb}" required>
@@ -43,9 +43,9 @@
         </form>
     </div>
 
-    <!-- Aquí van los logs corregidos para evitar errores -->
+  
     <script>
-        console.log("Objeto usuario:", usuario);  // Corregido el uso de ${}
+        console.log("Objeto usuario:", usuario);  
         console.log("Nombre del usuario:", usuario.UsuNomb);
         console.log("Apellido del usuario:", usuario.UsuApe);
         console.log("Correo del usuario:", usuario.UsuCorreo);
